@@ -33,12 +33,14 @@ cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
 ```
 
 Navigate to the swak4foam directory.  If you ran this for a previous build of OF, then you need to clean up first:
-
+```bash
 ./Allwclean
+```
 
 Now compile swak4foam (note that you should have already loaded the OF bashrc for the version you want to compile for)
-
+```bash
 ./Allwmake > log.make 2>&1
+```
 
 Instructions:  https://openfoamwiki.net/index.php/Installation/swak4Foam
 
@@ -46,9 +48,10 @@ If that doesn’t work because of libraries failing, you may need to re-download
 https://openfoamwiki.net/index.php/Contrib/swak4Foam
 
 For HEAT appImage you may need to edit the following files:
-
+```bash
 dashGUI.py
 appImageRecipe.yml
 .../openfoam/etc/bashrcHEAT
 .../openfoam/etc/setupHEAT
 <HEATdir>/github/source/appImageRunHEAT
+```
