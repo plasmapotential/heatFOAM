@@ -1,2 +1,1 @@
-# heatFOAM
-HEAT openFOAM solver
+# heatFOAM: HEAT openFOAM solver
