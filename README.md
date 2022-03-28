@@ -5,7 +5,7 @@ This code is meant to be utilized with the Heat flux Engineering Analysis Toolki
 
 HEAT calculates tokamak power exhaust by predicting the heat flux on plasma facing component (PFC) surfaces (ie on an STL mesh).  HEAT then calls a series of openFOAM scripts to generate a volume mesh from the STL mesh.  TimeVaryingMappedFixedValue is used to interpolate this heat flux point cloud (from the STL) onto the volume mesh boundary patch, which is called STLpatch.  The swak4Foam groovyBC is used to create a gradient expression (Fourier's Law of Conduction) for the STLpatch.  Then heatFOAM solves for the time varying thermal diffusion throughout the PFC bulk material.
 
-The code was written by Dr. Tom Looby.  Questions can be directed to tlooby@cfs.energy
+The code was written by Tom Looby, PhD.  Questions can be directed to tlooby@cfs.energy
 
 There are two directories in this repo, and each will be described below.  At the bottom some build notes provide information about building this source code.
 
