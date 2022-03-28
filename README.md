@@ -25,10 +25,12 @@ https://develop.openfoam.com/Development/openfoam/-/blob/master/doc/Build.md
 
 Make sure that before you compile, you copy the heatfoam dir to the new install so that it compiles that too.  
 
-After compiling, make a new $FOAM_RUN dir: \\
-mkdir -p $FOAM_RUN \\
-cd $FOAM_RUN \\
-cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily . \\
+After compiling, make a new $FOAM_RUN dir:
+```bash
+mkdir -p $FOAM_RUN
+cd $FOAM_RUN
+cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
+```
 
 Navigate to the swak4foam directory.  If you ran this for a previous build of OF, then you need to clean up first:
 
