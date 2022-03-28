@@ -21,7 +21,7 @@ heatFoamTemplate is a directory containing an example openfoam case for heatFOAM
 - in the 0/ directory (initial timestep), the HF foam file contains the call to TimeVaryingMappedFixedValue
 - in the 0/ directory the T foam file contains the groovyBC boundary condition which requires swak4Foam.  The gradientExpression contains Fourier's law for heat conduction.
 - Example DT (thermal diffusivity) and thermCond (thermal conductivity) have been provided in the constant/ directory.  These are temperature dependent properties and heatFoam will interpolate at each timestep.
--the triSurface/ directory is empty, but would need the STLpatch information, as created in HEAT using the blockMesh and snappyHexMesh utilities.
+- the triSurface/ directory is empty, but would need the STLpatch information, as created in HEAT using the blockMesh and snappyHexMesh utilities.
 
 ## openFOAM build notes
 To install openfoam, follow these instructions:
