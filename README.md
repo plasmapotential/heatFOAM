@@ -26,19 +26,19 @@ https://develop.openfoam.com/Development/openfoam/-/blob/master/doc/Build.md
 Make sure that before you compile, you copy the heatfoam dir to the new install so that it compiles that too.  
 
 After compiling, make a new $FOAM_RUN dir:
-```bash
+```
 mkdir -p $FOAM_RUN
 cd $FOAM_RUN
 cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
 ```
 
-Navigate to the swak4foam directory.  If you ran this for a previous build of OF, then you need to clean up first:
-```bash
+Navigate to the swak4foam directory.  If you ran this for a previous build of OF, then you need to clean up first
+```
 ./Allwclean
 ```
 
 Now compile swak4foam (note that you should have already loaded the OF bashrc for the version you want to compile for)
-```bash
+```
 ./Allwmake > log.make 2>&1
 ```
 
@@ -48,7 +48,7 @@ If that doesn’t work because of libraries failing, you may need to re-download
 https://openfoamwiki.net/index.php/Contrib/swak4Foam
 
 For HEAT appImage you may need to edit the following files:
-```bash
+```
 dashGUI.py
 appImageRecipe.yml
 .../openfoam/etc/bashrcHEAT
