@@ -17,9 +17,13 @@ openFOAMpath/applications/solvers/custom/heatFoam
 where openFOAMpath is the location of the openFOAM source code on your local machine.  Once you have placed this code in the correct location, you can compile by using the build_heatFoam script.  Alternatively, if you place the code in the aforementioned directory before building all of openFOAM from source it will also build heatFOAM.  Note that you must have already sourced your OF installation in the terminal before running build_heatFoam.  Also note that you will need the swiss army knife for openFOAM (Swak4FOAM) toolkit.
 
 ## heatFoamTemplate
+heatFoamTemplate is a directory containing an example openfoam case for heatFOAM.  A user could employ a directory similar to this to do heatFoam runs outside of HEAT.  HEAT copies this template directory into a new openFOAM structure before it runs a thermal analysis (see openFoamClass.py in HEAT).  The notable items in this directory are
+- in the 0/ directory (initial timestep), the HF foam file contains the call to TimeVaryingMappedFixedValue
+- in the 0/ directory the T foam file contains the groovyBC boundary condition which requires swak4Foam.  The gradientExpression contains Fourier's law for heat conduction.
+- Example DT (thermal diffusivity) and thermCond (thermal conductivity) have been provided in the constant/ directory.  These are temperature dependent properties and heatFoam will interpolate at each timestep.
+-the triSurface/ directory is empty, but would need the STLpatch information, as created in HEAT using the blockMesh and snappyHexMesh utilities.
 
-
-## build notes
+## openFOAM build notes
 To install openfoam, follow these instructions:
 https://develop.openfoam.com/Development/openfoam/-/blob/master/doc/Build.md
 
