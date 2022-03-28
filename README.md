@@ -1,5 +1,5 @@
 # heatFOAM:
-This repo contians the heatFOAM solver, which is a custom solver for openFOAM.  The heatFOAM solver solves the thermal diffusion equation in 3D for a solid material with temperature dependent thermal properties.  The heat flux is applied as a Neumann boundary condition, and temperature is solved throughout the bulk material.
+This repo contains the heatFOAM solver, which is a custom solver for openFOAM.  heatFOAM solves the thermal diffusion equation in 3D for a solid material with temperature dependent thermal properties.  The heat flux is applied as a Neumann boundary condition, and temperature is solved throughout the bulk material, which is of singular composition.
 
 This code is meant to be utilized with the Heat flux Engineering Analysis Toolkit (HEAT), which can be found here: https://github.com/plasmapotential/HEAT
 
