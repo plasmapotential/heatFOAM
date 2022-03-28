@@ -1,11 +1,11 @@
 # heatFOAM:
-This repo contains the heatFOAM solver, which is a custom solver for openFOAM.  heatFOAM solves the thermal diffusion equation in 3D for a solid material with temperature dependent thermal properties.  The heat flux is applied as a Neumann boundary condition, and temperature is solved throughout the bulk material, which is of singular composition (ie not a multi-region problem).
+This repo contains the heatFOAM solver, which is a custom solver for openFOAM.  heatFOAM solves the thermal diffusion equation in 3D for a solid material with temperature dependent thermal properties.  The heat flux is applied as a Neumann boundary condition, and temperature is solved throughout the bulk material, which is of singular composition (ie not a multi-region problem).  This source code has been tested with openFOAM v2106.
 
 This code is meant to be utilized with the Heat flux Engineering Analysis Toolkit (HEAT), which can be found here: https://github.com/plasmapotential/HEAT
 
 HEAT calculates tokamak power exhaust by predicting the heat flux on plasma facing component (PFC) surfaces (ie on an STL mesh).  HEAT then calls a series of openFOAM scripts to generate a volume mesh from the STL mesh.  TimeVaryingMappedFixedValue is used to interpolate this heat flux point cloud (from the STL) onto the volume mesh boundary patch, which is called STLpatch.  The swak4Foam groovyBC is used to create a gradient expression (Fourier's Law of Conduction) for the STLpatch.  Then heatFOAM solves for the time varying thermal diffusion throughout the PFC bulk material.
 
-The code was written by Tom Looby, PhD.  Questions can be directed to tlooby@cfs.energy
+The code was written by Dr. Tom Looby.  Questions can be directed to tlooby@cfs.energy
 
 There are two directories in this repo, and each will be described below.  At the bottom some build notes provide information about building this source code.
 
@@ -14,10 +14,10 @@ The source directory contains source code for openFOAM.  This is a custom solver
 
 openFOAMpath/applications/solvers/custom/heatFoam
 
-where openFOAMpath is the location of the openFOAM source code on your local machine.  Once you have placed this code in the correct location, you can compile by using the build_heatFoam script.  Alternatively, if you place the code in the aforementioned directory before building all of openFOAM from source it will also build heatFOAM.  Note that you must have already sourced your OF installation in the terminal before running build_heatFoam.  Also note that you will need the swiss army knife for openFOAM (Swak4FOAM) toolkit.
+where openFOAMpath is the location of the openFOAM source code on your local machine.  Once you have placed this code in the correct location, you can compile by using the build_heatFoam script.  Alternatively, if you place the code in the aforementioned directory before building all of openFOAM from source it will also build heatFOAM.  Note that you must have already sourced your OF installation in the terminal before running build_heatFoam.  Also note that you will need the swiss army knife for openFOAM (swak4FOAM) toolkit.
 
 ## heatFoamTemplate
-heatFoamTemplate is a directory containing an example openfoam case for heatFOAM.  A user could employ a directory similar to this to do heatFoam runs outside of HEAT.  HEAT copies this template directory into a new openFOAM structure before it runs a thermal analysis (see openFoamClass.py in HEAT).  The notable items in this directory are
+heatFoamTemplate is a directory containing an example openfoam case for heatFOAM.  A user could employ a directory similar to this to do heatFoam runs outside of HEAT.  HEAT copies this template directory into a new openFOAM structure before it runs a thermal analysis (see openFoamClass.py and engineClass.py in HEAT).  The notable items in this directory are
 - in the 0/ directory (initial timestep), the HF foam file contains the call to TimeVaryingMappedFixedValue
 - in the 0/ directory the T foam file contains the groovyBC boundary condition which requires swak4Foam.  The gradientExpression contains Fourier's law for heat conduction.
 - Example DT (thermal diffusivity) and thermCond (thermal conductivity) have been provided in the constant/ directory.  These are temperature dependent properties and heatFoam will interpolate at each timestep.
