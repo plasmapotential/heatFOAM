@@ -9,7 +9,9 @@ There are two directories in this repo, and each will be described below.
 
 ## source
 The source directory contains source code for openFOAM.  This is a custom solver that should be placed in the following directory:
+
 <openFOAMpath>/applications/solvers/custom/heatFoam
+
 where <openFOAMpath> is the location of the openFOAM source code on your local machine
 
 ## heatFoamTemplate
