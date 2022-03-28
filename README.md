@@ -5,6 +5,8 @@ This code is meant to be utilized with the Heat flux Engineering Analysis Toolki
 
 HEAT calculates the heat flux on plasma facing component (PFC) surfaces (ie on an STL mesh).  HEAT then calls a series of openFOAM scripts to generate a volume mesh from the STL mesh.  TimeVaryingMappedFixedValue is used to interpolate this heat flux point cloud (from the STL) onto the volume mesh boundary patch, which is called STLpatch.  Then the heatFOAM solver solves for the time varying thermal diffusion throughout the PFC bulk material.
 
+The code was written by Dr. Tom Looby.  This code was written while Tom worked for Oak Ridge National Lab.  Now Tom works for Commonwealth Fusion Systems, and questions can be directed to tlooby@cfs.energy
+
 There are two directories in this repo, and each will be described below.
 
 ## source
@@ -12,6 +14,6 @@ The source directory contains source code for openFOAM.  This is a custom solver
 
 openFOAMpath/applications/solvers/custom/heatFoam
 
-where openFOAMpath is the location of the openFOAM source code on your local machine
+where openFOAMpath is the location of the openFOAM source code on your local machine.  Once you have placed this code in the correct location, you can compile by using the build_heatFoam script.  Note that you must have already sourced your OF installation in the terminal before running build_heatFoam.
 
 ## heatFoamTemplate
